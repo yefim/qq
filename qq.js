@@ -15,7 +15,11 @@ window.qq = (selector, root = document) => {
     },
 
     html(content) {
-      this.element.innerHTML = content;
+      if (content === undefined) {
+        return this.element.innerHTML;
+      } else {
+        this.element.innerHTML = content;
+      }
     }
   }
 }

@@ -11,5 +11,7 @@ $form.on('submit', (e) => {
 
   console.log(email, password);
 
+  console.log($form.html());
+
   $banner.html('<h1>Success!</h1>');
 });
