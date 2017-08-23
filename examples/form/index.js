@@ -13,5 +13,7 @@ $form.on('submit', (e) => {
 
   console.log($form.html());
 
+  $form.data('submitted', true);
+
   $banner.html('<h1>Success!</h1>');
 });

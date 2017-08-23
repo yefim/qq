@@ -35,6 +35,15 @@ window.qq = (selector, root = document) => {
         this._first.innerHTML = content;
         return this;
       }
+    },
+
+    data(key, content) {
+      if (content === undefined) {
+        return this._first.dataset[key];
+      } else {
+        this._first.dataset[key] = content;
+        return this;
+      }
     }
   }
 }
