@@ -1,24 +1,36 @@
 window.qq = (selector, root = document) => {
+  const _elements = root.querySelectorAll(selector);
+
   return {
-    element: root.querySelector(selector),
+    _elements,
+
+    _first: _elements[0],
+
+    each(fn) {
+      for (let i = 0, len = this._elements.length; i < len; i++) {
+        fn(this._elements[i], i);
+      }
+    },
 
     on(e, fn) {
-      this.element.addEventListener(e, fn);
+      this.each((element) => {
+        element.addEventListener(e, fn);
+      });
     },
 
     find(selector) {
-      return qq(selector, this.element);
+      return qq(selector, this._first);
     },
 
     value() {
-      return this.element.value;
+      return this._first.value;
     },
 
     html(content) {
       if (content === undefined) {
-        return this.element.innerHTML;
+        return this._first.innerHTML;
       } else {
-        this.element.innerHTML = content;
+        this._first.innerHTML = content;
       }
     }
   }
