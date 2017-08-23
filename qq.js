@@ -33,6 +33,7 @@ window.qq = (selector, root = document) => {
         return this._first.innerHTML;
       } else {
         this._first.innerHTML = content;
+        return this;
       }
     }
   }
