@@ -12,6 +12,10 @@ window.qq = (selector, root = document) => {
 
     value() {
       return this.element.value;
+    },
+
+    html(content) {
+      this.element.innerHTML = content;
     }
   }
 }
