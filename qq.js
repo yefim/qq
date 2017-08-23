@@ -6,6 +6,8 @@ window.qq = (selector, root = document) => {
 
     _first: _elements[0],
 
+    length: _elements.length,
+
     each(fn) {
       for (let i = 0, len = this._elements.length; i < len; i++) {
         fn(this._elements[i], i);
