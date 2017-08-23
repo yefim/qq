@@ -1,16 +1,13 @@
 window.qq = (selector, root = document) => {
   const _elements = root.querySelectorAll(selector);
+  const _first = _elements[0];
 
   return {
-    _elements,
-
-    _first: _elements[0],
-
     length: _elements.length,
 
     each(fn) {
-      for (let i = 0, len = this._elements.length; i < len; i++) {
-        fn(this._elements[i], i);
+      for (let i = 0, len = _elements.length; i < len; i++) {
+        fn(_elements[i], i);
       }
     },
 
@@ -21,27 +18,27 @@ window.qq = (selector, root = document) => {
     },
 
     find(selector) {
-      return qq(selector, this._first);
+      return qq(selector, _first);
     },
 
     value() {
-      return this._first.value;
+      return _first.value;
     },
 
     html(content) {
       if (content === undefined) {
-        return this._first.innerHTML;
+        return _first.innerHTML;
       } else {
-        this._first.innerHTML = content;
+        _first.innerHTML = content;
         return this;
       }
     },
 
     data(key, content) {
       if (content === undefined) {
-        return this._first.dataset[key];
+        return _first.dataset[key];
       } else {
-        this._first.dataset[key] = content;
+        _first.dataset[key] = content;
         return this;
       }
     }
