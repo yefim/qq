@@ -1,7 +1,7 @@
 qq
 ====
 
-Not just an instant messenger. Qq is also a dumbed down version of jQuery.
+Not just an instant messenger - qq is also a dumbed down version of jQuery.
 
 ## Just how dumb is it?
 
